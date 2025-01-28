@@ -1,0 +1,8 @@
+---
+- name: Print post-hook variables
+  hosts: localhost
+
+  tasks:
+  - name: Print managed-cluster-info
+    ansible.builtin.debug:
+      msg: This is {{ cluster_info }}
