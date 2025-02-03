@@ -5,4 +5,10 @@
   tasks:
   - name: Print managed-cluster-info
     ansible.builtin.debug:
-      msg: This is {{ cluster_info }}
+      msg: This is cluster_info {{ cluster_info }}
+  - name: Print managed-cluster-info
+    ansible.builtin.debug:
+      msg: This is cluster_deployment {{ cluster_deployment }}
+  - name: Print managed-cluster-info
+    ansible.builtin.debug:
+      msg: This is install-config {{ install-config }}
