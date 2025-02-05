@@ -21,8 +21,8 @@
   - name: Show all extra-vars
     debug:
       msg: This is {{ item.key }} {{ item.value }}
-    loop: "{{ vars | dict2items }}"
-    when: vars is defined
+    loop: "{{ extra_vars | dict2items }}"
+    when: extra_vars is defined
 
   
   - name: finish
