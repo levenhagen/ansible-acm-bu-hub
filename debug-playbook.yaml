@@ -1,5 +1,5 @@
 ---
-- name: Print post-hook variables
+- name: Print variables
   hosts: localhost
 
   tasks:
