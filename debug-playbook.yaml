@@ -15,8 +15,8 @@
     
   - name: Show install-config info
     ansible.builtin.debug:
-      msg: This is install-config {{ install-config }}
-    when: install-config is defined
+      msg: This is install-config {{ install_config }}
+    when: install_config is defined
     
   - name: Show all extra-vars
     debug:
