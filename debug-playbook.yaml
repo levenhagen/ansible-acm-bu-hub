@@ -3,12 +3,27 @@
   hosts: localhost
 
   tasks:
-  - name: Print managed-cluster-info
+  - name: Show managed-cluster info
     ansible.builtin.debug:
       msg: This is cluster_info {{ cluster_info }}
-  - name: Print managed-cluster-info
+    when: cluster_info is defined
+    
+  - name: Show cluster-deployment info
     ansible.builtin.debug:
       msg: This is cluster_deployment {{ cluster_deployment }}
-  - name: Print managed-cluster-info
+    when: cluster_deployment is defined
+    
+  - name: Show install-config info
     ansible.builtin.debug:
       msg: This is install-config {{ install-config }}
+    when: install-config is defined
+    
+  - name: Show all extra-vars
+    debug:
+      msg: This is "{{ item.key }}: {{ item.value }}"
+    loop: "{{ ansible_env | dict2items }}"
+    when: ansible_env is defined
+  
+  - name: finish
+    debug:
+      msg: "Job is finished."
