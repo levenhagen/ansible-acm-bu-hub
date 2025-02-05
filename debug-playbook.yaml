@@ -20,7 +20,7 @@
     
   - name: Show all extra-vars
     debug:
-      msg: This is "{{ item.key }}": "{{ item.value }}"
+      msg: This is {{ item.key }} : {{ item.value }}
     loop: "{{ ansible_env | dict2items }}"
     when: ansible_env is defined
   
